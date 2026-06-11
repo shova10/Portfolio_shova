@@ -1,4 +1,4 @@
-import image from '../assets/shova.jpg'
+import image from '../assets/Shova (2).jpg'
 import shova_resume from '../assets/Shova_resume.pdf'
 
 const SKILLS = [
@@ -23,14 +23,13 @@ function About() {
               Frontend Developer & Final Year BIT Student
             </h2>
             <p className="font-sans text-gray-400 leading-relaxed mb-6">
-              I am currently a final-year BIT student at Bhairahawa Multiple
-              Campus, Tribhuvan University. I specialize in architecting
-              structured React frontends and recently shipped
-              <span className="text-white font-medium"> CivicAid</span> — a
-              public complaint management platform built alongside a
-              Django/PostgreSQL stack. I focus heavily on writing accessible
-              code, building clean components, and solving real-world functional
-              problems.
+              I'm a frontend developer focused on building clean, functional,
+              and accessible React applications. I recently shipped CivicAid - a
+              live civic issue reporting platform featuring role-based
+              dashboards, a Leaflet.js heatmap, and JWT authentication flows,
+              integrated with a Django REST API. I'm completing my BIT degree at
+              Bhairahawa Multiple Campus, Tribhuvan University, and actively
+              seeking junior frontend opportunities.
             </p>
 
             <div className="flex flex-wrap justify-center md:justify-start gap-2 mb-8">
@@ -68,13 +67,13 @@ function About() {
             </a>
           </div>
 
-          <div className="order-1 md:order-2 shrink-0 flex items-center justify-center">
+          <div className="order-1 md:order-2 flex-1 flex items-center justify-center">
             <div className="relative group">
               <div className="absolute inset-0 bg-accent/20 rounded-full blur-2xl group-hover:bg-accent/30 transition-all duration-300 scale-110" />
               <img
                 src={image}
                 alt="Shova Pandey"
-                className="relative w-60 h-60 sm:w-64 sm:h-64 md:w-76 md:h-76 lg:w-80 lg:h-80 rounded-full object-cover ring-4 ring-surface shadow-2xl transition-transform duration-300 group-hover:scale-[1.02]"
+                className="relative w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full object-cover ring-4 ring-surface shadow-2xl transition-transform duration-300 group-hover:scale-[1.02]"
               />
             </div>
           </div>

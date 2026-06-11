@@ -25,10 +25,10 @@ function Hero() {
         </p>
 
         <p className="font-sans text-gray-400 text-base md:text-lg leading-relaxed max-w-2xl mb-10">
-          I build clean, highly responsive, and component-driven web
-          applications using modern **React** and **Tailwind CSS**. Currently a
-          final-year BIT student at Tribhuvan University, based in Nepal,
-          focusing on blending performance with clean design layouts.
+          I'm a frontend developer and final-year BIT student based in Nepal. I
+          build responsive, component-driven web apps using React and Tailwind
+          CSS with a focus on clean design, readable code, and interfaces that
+          actually work on every screen.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto mb-12">
