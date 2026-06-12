@@ -1,4 +1,4 @@
-import image from '../assets/Shova (2).jpg'
+import image from '../assets/shovaaa.jpeg'
 import shova_resume from '../assets/Shova_resume.pdf'
 
 const SKILLS = [
