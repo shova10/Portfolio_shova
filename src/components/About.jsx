@@ -1,5 +1,5 @@
 import image from '../assets/shovaaa.jpeg'
-import shova_resume from '../assets/Shova_resume.pdf'
+import shova_resume from '../assets/Shova_Pandey_Resumee.pdf'
 
 const SKILLS = [
   'React.js',
