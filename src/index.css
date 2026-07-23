@@ -1,10 +1,137 @@
 @import 'tailwindcss';
-@theme {
-  --color-canvas: #0b0f19;
-  --color-surface: #161b26;
-  --color-accent: #00f5d4;
-  --color-accent-hover: #00d1b5;
 
-  --font-sans: 'Inter', sans-serif;
-  --font-heading: 'Plus Jakarta Sans', sans-serif;
+:root {
+  --color-canvas: #1f1319;
+  --color-canvas-soft: #2a1a22;
+  --color-surface: #331f26;
+  --color-surface-soft: #3e2530;
+  --color-blush: #e88fa3;
+  --color-blush-hover: #ec9fb1;
+  --color-gold: #f0c48a;
+  --color-lavender: #a98fb0;
+  --color-text-warm: #f5e6dc;
+  --color-text-muted: #cbb3ae;
+  --color-border-soft: rgba(245, 230, 220, 0.08);
+
+  --font-display: 'Fraunces', serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-script: 'Caveat', cursive;
+
+  color-scheme: dark;
+}
+
+html.light {
+  --color-canvas: #fdf6f2;
+  --color-canvas-soft: #fbeee8;
+  --color-surface: #ffffff;
+  --color-surface-soft: #fff5f8;
+  --color-blush: #d97992;
+  --color-blush-hover: #c96683;
+  --color-gold: #d9a05f;
+  --color-lavender: #8f74a8;
+  --color-text-warm: #4a3752;
+  --color-text-muted: #7d6672;
+  --color-border-soft: rgba(74, 55, 82, 0.08);
+
+  color-scheme: light;
+}
+
+@theme {
+  --color-canvas: var(--color-canvas);
+  --color-canvas-soft: var(--color-canvas-soft);
+  --color-surface: var(--color-surface);
+  --color-surface-soft: var(--color-surface-soft);
+  --color-blush: var(--color-blush);
+  --color-blush-hover: var(--color-blush-hover);
+  --color-gold: var(--color-gold);
+  --color-lavender: var(--color-lavender);
+  --color-text-warm: var(--color-text-warm);
+  --color-text-muted: var(--color-text-muted);
+  --color-border-soft: var(--color-border-soft);
+
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+  --font-script: var(--font-script);
+}
+
+* {
+  scrollbar-color: var(--color-blush) transparent;
+}
+
+body {
+  background: var(--color-canvas);
+  transition: background-color 0.4s ease;
+}
+
+::selection {
+  background: var(--color-blush);
+  color: var(--color-canvas);
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(12px, -18px) rotate(6deg);
+  }
+}
+@keyframes float-slower {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(-16px, 14px) rotate(-5deg);
+  }
+}
+@keyframes sparkle-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.15);
+  }
+}
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 9s ease-in-out infinite;
+}
+.animate-float-slower {
+  animation: float-slower 13s ease-in-out infinite;
+}
+.animate-sparkle {
+  animation: sparkle-pulse 3.2s ease-in-out infinite;
+}
+.animate-glow {
+  animation: glow-pulse 5s ease-in-out infinite;
+}
+
+.glass-panel {
+  background: color-mix(in srgb, var(--color-surface) 70%, transparent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--color-border-soft);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-slow,
+  .animate-float-slower,
+  .animate-sparkle,
+  .animate-glow {
+    animation: none !important;
+  }
 }

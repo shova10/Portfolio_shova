@@ -1,32 +1,36 @@
+import { Github, Linkedin, Sparkle } from 'lucide-react'
+
 function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="w-full bg-canvas border-t border-white/5 py-2 px-6 mt-12">
-      <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-gray-500">
-        <p className="text-center sm:text-left">
-          &copy; {currentYear} &middot; Designed & built by{' '}
-          <span className="text-gray-300 font-sans font-medium hover:text-accent transition-colors">
+    <footer className="w-full border-t border-(--color-border-soft) py-6 px-6 mt-8">
+      <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-(--color-text-muted)">
+        <p className="flex items-center gap-1.5 text-center sm:text-left">
+          &copy; {currentYear} &middot; Designed & built with
+          <Sparkle className="w-3 h-3 text-gold" />
+          by{' '}
+          <span className="font-display text-(--color-text-warm) font-medium">
             Shova Pandey
           </span>
         </p>
 
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-5">
           <a
             href="https://github.com/shova10"
             target="_blank"
             rel="noreferrer"
-            className="hover:text-white transition-colors duration-200"
+            className="flex items-center gap-1.5 hover:text-blush transition-colors duration-200"
           >
-            GitHub
+            <Github className="w-4 h-4" /> GitHub
           </a>
           <a
             href="https://linkedin.com/in/shova-pandey"
             target="_blank"
             rel="noreferrer"
-            className="hover:text-white transition-colors duration-200"
+            className="flex items-center gap-1.5 hover:text-blush transition-colors duration-200"
           >
-            LinkedIn
+            <Linkedin className="w-4 h-4" /> LinkedIn
           </a>
         </div>
       </div>

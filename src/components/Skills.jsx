@@ -1,48 +1,60 @@
 import skillsData from '../data/skills'
+import Reveal from './ui/Reveal'
 
-function SkillsGroup({ group }) {
+function SkillsGroup({ group, delay }) {
+  const isLearning = group.category === 'Currently Learning'
   return (
-    <div className="bg-surface border border-white/5 rounded-xl p-6 transition-all duration-300 hover:border-accent/15 group">
-      <h3 className="font-heading text-lg font-bold text-white mb-4 group-hover:text-accent transition-colors duration-200">
-        {group.category}
-      </h3>
-
-      <ul
-        className="grid grid-cols-2 gap-3"
-        aria-label={`Skills in ${group.category}`}
+    <Reveal delay={delay} className="h-full">
+      <div
+        className={`rounded-3xl p-6 h-full transition-all duration-300 glass-panel hover:-translate-y-1 hover:shadow-[0_12px_30px_-14px_rgba(232,143,163,0.35)] ${
+          isLearning ? 'ring-1 ring-gold/40' : ''
+        }`}
       >
-        {group.items.map((skill) => (
-          <li
-            key={skill}
-            className="font-sans text-xs text-gray-400 bg-canvas border border-white/5 px-3 py-2.5 rounded-lg flex items-center gap-2 hover:text-white hover:border-white/10 transition-colors"
-          >
-            <span
-              className="w-1.5 h-1.5 rounded-full bg-accent/40"
-              aria-hidden="true"
-            />
-            {skill}
-          </li>
-        ))}
-      </ul>
-    </div>
+        <h3 className="font-display text-lg font-medium text-(--color-text-warm) mb-4 flex items-center gap-2">
+          {group.category}
+          {isLearning && (
+            <span className="font-script text-base text-gold">in progress</span>
+          )}
+        </h3>
+
+        <ul
+          className="grid grid-cols-2 gap-2.5"
+          aria-label={`Skills in ${group.category}`}
+        >
+          {group.items.map((skill) => (
+            <li
+              key={skill}
+              className="font-sans text-xs text-(--color-text-muted) bg-(--color-canvas-soft) border border-(--color-border-soft) px-3 py-2.5 rounded-xl flex items-center gap-2 hover:text-(--color-text-warm) transition-colors"
+            >
+              <span
+                className="w-1.5 h-1.5 rounded-full bg-blush"
+                aria-hidden="true"
+              />
+              {skill}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </Reveal>
   )
 }
 
 function Skills() {
   return (
-    <section id="skills" className="py-20 px-6 max-w-5xl mx-auto scroll-mt-16">
-      <div className="w-full">
-        <div className="flex flex-col mb-12">
-          <h2 className="font-heading text-2xl md:text-3xl font-extrabold text-white tracking-tight">
-            Technical Skillset
-          </h2>
-        </div>
+    <section id="skills" className="py-16 px-6 max-w-5xl mx-auto scroll-mt-16">
+      <Reveal>
+        <span className="inline-block font-script text-2xl text-gold mb-2">
+          what I work with
+        </span>
+        <h2 className="font-display text-3xl md:text-4xl font-medium text-(--color-text-warm) mb-10">
+          Skills & Tools
+        </h2>
+      </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {skillsData.map((group) => (
-            <SkillsGroup key={group.category} group={group} />
-          ))}
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {skillsData.map((group, i) => (
+          <SkillsGroup key={group.category} group={group} delay={i * 0.06} />
+        ))}
       </div>
     </section>
   )

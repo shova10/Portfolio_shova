@@ -1,83 +1,75 @@
 import image from '../assets/shovaaa.jpeg'
 import shova_resume from '../assets/Shova_Pandey_Resumee.pdf'
-
-const SKILLS = [
-  'React.js',
-  'Tailwind CSS',
-  'Git & GitHub',
-  'REST API Integration',
-  'JavaScript (ES6+)',
-]
+import { Download } from 'lucide-react'
+import Reveal from './ui/Reveal'
+import MoodPill from './ui/MoodPill'
 
 function About() {
   return (
-    <section id="about" className="py-20 px-6 max-w-5xl mx-auto scroll-mt-16">
-      <div className="w-full">
-        <span className="inline-block text-xs font-mono font-medium uppercase tracking-widest text-accent border border-accent/20 bg-accent/5 px-3 py-1 rounded-full mb-6">
-          About me
+    <section id="about" className="py-16 px-6 max-w-5xl mx-auto scroll-mt-16">
+      <Reveal>
+        <span className="inline-block font-script text-2xl text-gold mb-2">
+          a little about me
         </span>
+        <h2 className="font-display text-3xl md:text-4xl font-medium text-(--color-text-warm) mb-10">
+          My Story
+        </h2>
+      </Reveal>
 
-        <div className="flex flex-col md:flex-row items-center gap-12">
-          <div className="flex-1 order-2 md:order-1 text-center md:text-left">
-            <h2 className="font-heading text-2xl md:text-3xl font-bold text-white leading-snug mb-4">
-              Frontend Developer & Final Year BIT Student
-            </h2>
-            <p className="font-sans text-gray-400 leading-relaxed mb-6">
-              I'm a frontend developer focused on building clean, functional,
-              and accessible React applications. I recently shipped CivicAid - a
-              live civic issue reporting platform featuring role-based
-              dashboards, a Leaflet.js heatmap, and JWT authentication flows,
-              integrated with a Django REST API. I'm completing my BIT degree at
-              Bhairahawa Multiple Campus, Tribhuvan University, and actively
-              seeking junior frontend opportunities.
-            </p>
+      <div className="flex flex-col md:flex-row items-center gap-12">
+        <Reveal
+          delay={0.1}
+          className="flex-1 order-2 md:order-1 text-center md:text-left"
+        >
+          <p className="font-sans text-(--color-text-muted) leading-relaxed mb-5">
+            I've been interested in computers since I was a kid there was always
+            something satisfying about building a thing and then actually
+            getting to see it work. That's still what pulls me back to the
+            screen every day.
+          </p>
+          <p className="font-sans text-(--color-text-muted) leading-relaxed mb-6">
+            I recently shipped{' '}
+            <span className="text-blush font-medium">CivicAid</span> a live
+            civic issue reporting platform with role-based dashboards, a
+            Leaflet.js heatmap, and JWT authentication, integrated with a Django
+            REST API. I'm completing my BIT degree at Bhairahawa Multiple
+            Campus, Tribhuvan University, and actively looking for junior
+            frontend opportunities with an eye on growing into fullstack and,
+            eventually, data science.
+          </p>
 
-            <div className="flex flex-wrap justify-center md:justify-start gap-2 mb-8">
-              {SKILLS.map((skill) => (
-                <span
-                  key={skill}
-                  className="font-mono text-xs text-accent border border-accent/10 bg-surface px-3 py-1.5 rounded-md"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-
-            <a
-              href={shova_resume}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-canvas bg-accent hover:bg-accent-hover px-5 py-2.5 rounded-lg transition-all duration-200 transform hover:-translate-y-0.5"
-            >
-              Download CV
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-                />
-              </svg>
-            </a>
+          <div className="flex flex-wrap justify-center md:justify-start gap-2 mb-8">
+            <MoodPill>React.js</MoodPill>
+            <MoodPill>Tailwind CSS</MoodPill>
+            <MoodPill>Git & GitHub</MoodPill>
+            <MoodPill>REST APIs</MoodPill>
+            <MoodPill>JavaScript (ES6+)</MoodPill>
           </div>
 
-          <div className="order-1 md:order-2 flex-1 flex items-center justify-center">
-            <div className="relative group">
-              <div className="absolute inset-0 bg-accent/20 rounded-full blur-2xl group-hover:bg-accent/30 transition-all duration-300 scale-110" />
-              <img
-                src={image}
-                alt="Shova Pandey"
-                className="relative w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full object-cover ring-4 ring-surface shadow-2xl transition-transform duration-300 group-hover:scale-[1.02]"
-              />
-            </div>
+          <a
+            href={shova_resume}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-(--color-canvas) bg-blush hover:bg-blush-hover px-6 py-3 rounded-full transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg shadow-blush/20"
+          >
+            Download CV
+            <Download className="w-4 h-4" strokeWidth={2} />
+          </a>
+        </Reveal>
+
+        <Reveal
+          delay={0.2}
+          className="order-1 md:order-2 flex-1 flex items-center justify-center"
+        >
+          <div className="relative group">
+            <div className="absolute inset-0 bg-linear-to-br from-blush/30 via-gold/20 to-lavender/30 rounded-full blur-2xl group-hover:blur-3xl transition-all duration-500 scale-110 animate-glow" />
+            <img
+              src={image}
+              alt="Shova Pandey"
+              className="relative w-80 h-80 sm:w-96 sm:h-96 md:w-115 md:h-115 rounded-full object-cover ring-4 ring-(--color-surface) shadow-2xl transition-transform duration-300 group-hover:scale-105"
+            />
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   )

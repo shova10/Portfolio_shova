@@ -60,6 +60,10 @@ const skillsData = [
       'JWT Authentication (Frontend)',
     ],
   },
+  {
+    category: 'Currently Learning',
+    items: ['Next.js', 'TypeScript', 'Pandas', 'scikit-learn'],
+  },
 ]
 
 export default skillsData
